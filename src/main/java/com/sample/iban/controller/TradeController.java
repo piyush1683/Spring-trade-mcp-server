@@ -1,5 +1,6 @@
 package com.sample.iban.controller;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sample.iban.command.TradeAggregate;
 import com.sample.iban.command.TradeDTOs.CreateTradeCommand;
 import com.sample.iban.command.TradeDTOs.TradeBody;
+import com.sample.iban.command.TradeDTOs.TradeState;
 import com.sample.iban.config.ConfigReader;
+import com.sample.iban.repository.TradeRepositoryImpl;
 
 @RestController
 public class TradeController {
@@ -29,26 +32,27 @@ public class TradeController {
     @Autowired
     private TradeAggregate tradeAggregate;
 
+    @Autowired
+    private TradeRepositoryImpl tradeRepository;
+
     @GetMapping("/trade")
-    public String getTradeInfo() {
-        return "Trade information" + configReader.name() + "::" + configReader.proxy().host();
+    public ResponseEntity<List<TradeState>> getTradesInfo() {
+        List<TradeState> tradeStateLst = tradeRepository.findallTrades();
+        return ResponseEntity.ok().body(tradeStateLst);
     }
 
     @PostMapping("/trade")
     public ResponseEntity createTradeAccount(@RequestBody TradeBody trade) {
-        tradeAggregate.handle(new CreateTradeCommand(UUID.randomUUID(),
+        UUID tradeId = UUID.randomUUID();
+        tradeAggregate.handle(new CreateTradeCommand(tradeId,
                 trade.tradeId(), trade.party1(), trade.party2(), trade.amount(), trade.tradetype()));
         return ResponseEntity.ok("Trade account created: " + trade.toString());
     }
 
-    @PutMapping("/trade/{id}")
-    public String updateTradeAccount(@PathVariable String id, @RequestBody TradeBody account) {
-        return "Trade account updated: " + account.toString();
-    }
-
-    @DeleteMapping("/trade/{id}")
-    public String deleteTradeAccount(@PathVariable String id) {
-        return "Trade account deleted with ID: " + id;
+    @GetMapping("/trade/{id}")
+    public TradeState getTradeAccount(@PathVariable String id) {
+        TradeState tradeState = tradeRepository.findTradeById(id);
+        return tradeState;
     }
 
 }

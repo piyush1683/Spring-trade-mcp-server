@@ -22,7 +22,8 @@ public class SecurityWebConfig {
         requestCache.setMatchingRequestParameterName("continue");
 
         http.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/trade", "/trade/*", "/iban").permitAll()
+                .requestMatchers("/trade", "/trade/**", "/iban").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
                 .anyRequest().authenticated())
                 .oauth2Login(oauth2 -> oauth2
                         .defaultSuccessUrl("/index.html"))

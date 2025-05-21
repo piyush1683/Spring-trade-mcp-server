@@ -40,7 +40,6 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	implementation 'org.flywaydb:flyway-core'
 	runtimeOnly 'org.postgresql:postgresql'
-	// https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
 	runtimeOnly 'org.flywaydb:flyway-database-postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -51,7 +50,8 @@ dependencies {
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 	implementation "org.springframework.boot:spring-boot-starter-log4j2"
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+	implementation("org.springframework.boot:spring-boot-starter-actuator:3.4.5")
 }
 
 tasks.named('bootBuildImage') {
