@@ -1,4 +1,4 @@
-package com.sample.iban.config;
+package com.sample.trade.config;
 
 import java.io.IOException;
 

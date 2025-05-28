@@ -1,4 +1,4 @@
-package com.sample.iban.common;
+package com.sample.trade.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.event.EventListener;

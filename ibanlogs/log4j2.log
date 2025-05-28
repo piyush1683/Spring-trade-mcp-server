@@ -2721,3 +2721,311 @@ java.lang.IllegalArgumentException: Name for argument of type [java.lang.String]
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
 	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+[INFO ] 2025-05-20 15:53:28.531 [main] IbanApplication - Starting IbanApplication using Java 21.0.7 with PID 27244 (D:\Workspace\Spring\iban\bin\main started by BusinessComputers.in in D:\Workspace\Spring\iban)
+[INFO ] 2025-05-20 15:53:28.555 [main] IbanApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-05-20 15:53:33.454 [main] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2025-05-20 15:53:33.490 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-20 15:53:33.496 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2025-05-20 15:53:33.498 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO ] 2025-05-20 15:53:33.695 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-05-20 15:53:33.696 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5038 ms
+[INFO ] 2025-05-20 15:53:35.299 [main] FlywayExecutor - Database: jdbc:postgresql://localhost:5432/ibandb (PostgreSQL 17.4)
+[INFO ] 2025-05-20 15:53:35.428 [main] DbValidate - Successfully validated 0 migrations (execution time 00:00.052s)
+[WARN ] 2025-05-20 15:53:35.429 [main] DbValidate - No migrations found. Are your locations set up correctly?
+[INFO ] 2025-05-20 15:53:35.756 [main] DbMigrate - Current version of schema "public": << Empty Schema >>
+[INFO ] 2025-05-20 15:53:35.771 [main] DbMigrate - Schema "public" is up to date. No migration necessary.
+[INFO ] 2025-05-20 15:53:36.931 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2025-05-20 15:53:37.837 [main] EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[INFO ] 2025-05-20 15:53:39.416 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-20 15:53:39.476 [main] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[INFO ] 2025-05-20 15:53:39.536 [main] IbanApplication - Started IbanApplication in 11.622 seconds (process running for 13.277)
+[INFO ] 2025-05-20 15:53:40.063 [RMI TCP Connection(2)-127.0.0.1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-05-20 15:53:40.064 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-05-20 15:53:40.082 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Completed initialization in 17 ms
+[ERROR] 2025-05-20 15:53:50.341 [http-nio-8080-exec-1] [dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: Name for argument of type [java.lang.String] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.] with root cause
+java.lang.IllegalArgumentException: Name for argument of type [java.lang.String] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.updateNamedValueInfo(AbstractNamedValueMethodArgumentResolver.java:186) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.getNamedValueInfo(AbstractNamedValueMethodArgumentResolver.java:161) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:107) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at com.sample.iban.config.Myfilter.doFilter(Myfilter.java:24) ~[main/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:220) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:206) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultResourcesFilter.doFilter(DefaultResourcesFilter.java:72) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.5.jar:6.4.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+[INFO ] 2025-05-21 11:19:29.510 [Test worker] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sample.iban.IbanApplicationTests]: IbanApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2025-05-21 11:21:51.725 [Test worker] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sample.iban.IbanApplicationTests]: IbanApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2025-05-21 11:29:32.295 [main] IbanApplication - Starting IbanApplication using Java 21.0.7 with PID 9756 (D:\Workspace\Spring\iban\bin\main started by BusinessComputers.in in D:\Workspace\Spring\iban)
+[INFO ] 2025-05-21 11:29:32.335 [main] IbanApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-05-21 11:29:37.001 [main] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2025-05-21 11:29:37.032 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-21 11:29:37.038 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2025-05-21 11:29:37.039 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO ] 2025-05-21 11:29:37.172 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-05-21 11:29:37.172 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4720 ms
+[INFO ] 2025-05-21 11:29:39.285 [main] FlywayExecutor - Database: jdbc:postgresql://localhost:5432/ibandb (PostgreSQL 17.4)
+[INFO ] 2025-05-21 11:29:39.422 [main] DbValidate - Successfully validated 0 migrations (execution time 00:00.053s)
+[WARN ] 2025-05-21 11:29:39.423 [main] DbValidate - No migrations found. Are your locations set up correctly?
+[INFO ] 2025-05-21 11:29:39.592 [main] DbMigrate - Current version of schema "public": << Empty Schema >>
+[INFO ] 2025-05-21 11:29:39.608 [main] DbMigrate - Schema "public" is up to date. No migration necessary.
+[INFO ] 2025-05-21 11:29:40.344 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2025-05-21 11:29:41.001 [main] EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[INFO ] 2025-05-21 11:29:42.585 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-21 11:29:42.635 [main] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[INFO ] 2025-05-21 11:29:42.672 [main] IbanApplication - Started IbanApplication in 11.286 seconds (process running for 13.502)
+[INFO ] 2025-05-21 11:29:43.119 [RMI TCP Connection(2)-127.0.0.1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-05-21 11:29:43.120 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-05-21 11:29:43.123 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Completed initialization in 2 ms
+[INFO ] 2025-05-21 11:29:55.493 [http-nio-8080-exec-7] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2025-05-21 11:29:55.589 [http-nio-8080-exec-7] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cdcc6e8
+[INFO ] 2025-05-21 11:29:55.601 [http-nio-8080-exec-7] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2025-05-21 11:34:11.068 [main] IbanApplication - Starting IbanApplication using Java 21.0.7 with PID 10800 (D:\Workspace\Spring\spring-trade-mcp-server\build\classes\java\main started by BusinessComputers.in in D:\Workspace\Spring\spring-trade-mcp-server)
+[INFO ] 2025-05-21 11:34:11.127 [main] IbanApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-05-21 11:34:16.353 [main] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2025-05-21 11:34:16.388 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-21 11:34:16.392 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2025-05-21 11:34:16.393 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO ] 2025-05-21 11:34:16.518 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-05-21 11:34:16.519 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5206 ms
+[INFO ] 2025-05-21 11:34:18.360 [main] FlywayExecutor - Database: jdbc:postgresql://localhost:5432/ibandb (PostgreSQL 17.4)
+[INFO ] 2025-05-21 11:34:18.468 [main] DbValidate - Successfully validated 0 migrations (execution time 00:00.035s)
+[WARN ] 2025-05-21 11:34:18.469 [main] DbValidate - No migrations found. Are your locations set up correctly?
+[INFO ] 2025-05-21 11:34:18.640 [main] DbMigrate - Current version of schema "public": << Empty Schema >>
+[INFO ] 2025-05-21 11:34:18.648 [main] DbMigrate - Schema "public" is up to date. No migration necessary.
+[INFO ] 2025-05-21 11:34:19.362 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2025-05-21 11:34:20.321 [main] EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[INFO ] 2025-05-21 11:34:21.743 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-21 11:34:21.790 [main] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[INFO ] 2025-05-21 11:34:21.833 [main] IbanApplication - Started IbanApplication in 11.728 seconds (process running for 14.756)
+[INFO ] 2025-05-21 11:34:23.993 [RMI TCP Connection(2)-127.0.0.1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-05-21 11:34:23.993 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-05-21 11:34:23.997 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Completed initialization in 3 ms
+[INFO ] 2025-05-21 11:34:37.625 [http-nio-8080-exec-6] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2025-05-21 11:34:37.712 [http-nio-8080-exec-6] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6a1ed158
+[INFO ] 2025-05-21 11:34:37.726 [http-nio-8080-exec-6] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2025-05-22 15:46:04.270 [main] TradeApplication - Starting TradeApplication using Java 21.0.7 with PID 19352 (D:\Workspace\Spring\spring-trade-mcp-server\build\classes\java\main started by BusinessComputers.in in D:\Workspace\Spring\spring-trade-mcp-server)
+[INFO ] 2025-05-22 15:46:04.310 [main] TradeApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-05-22 15:46:09.334 [main] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2025-05-22 15:46:09.378 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-22 15:46:09.384 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2025-05-22 15:46:09.385 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO ] 2025-05-22 15:46:09.530 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-05-22 15:46:09.531 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5112 ms
+[INFO ] 2025-05-22 15:46:11.380 [main] FlywayExecutor - Database: jdbc:postgresql://localhost:5432/ibandb (PostgreSQL 17.4)
+[INFO ] 2025-05-22 15:46:11.563 [main] DbValidate - Successfully validated 0 migrations (execution time 00:00.074s)
+[WARN ] 2025-05-22 15:46:11.565 [main] DbValidate - No migrations found. Are your locations set up correctly?
+[INFO ] 2025-05-22 15:46:11.729 [main] DbMigrate - Current version of schema "public": << Empty Schema >>
+[INFO ] 2025-05-22 15:46:11.737 [main] DbMigrate - Schema "public" is up to date. No migration necessary.
+[INFO ] 2025-05-22 15:46:12.345 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2025-05-22 15:46:13.284 [main] EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[INFO ] 2025-05-22 15:46:14.743 [RMI TCP Connection(2)-127.0.0.1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-05-22 15:46:14.744 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-05-22 15:46:14.745 [RMI TCP Connection(2)-127.0.0.1] DefaultListableBeanFactory - Obtaining singleton bean 'multipartResolver' in thread "RMI TCP Connection(2)-127.0.0.1" while other thread holds singleton lock for other beans [kafkaListenerContainerFactory]
+[INFO ] 2025-05-22 15:46:14.751 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Completed initialization in 7 ms
+[INFO ] 2025-05-22 15:46:15.007 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-22 15:46:15.113 [main] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[INFO ] 2025-05-22 15:46:15.126 [main] TradeApplication - Started TradeApplication in 11.841 seconds (process running for 14.323)
+[INFO ] 2025-05-22 15:46:30.957 [http-nio-8080-exec-1] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2025-05-22 15:46:31.036 [http-nio-8080-exec-1] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7604e099
+[INFO ] 2025-05-22 15:46:31.042 [http-nio-8080-exec-1] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2025-05-25 10:58:49.945 [main] TradeApplication - Starting TradeApplication using Java 21.0.7 with PID 15728 (D:\Workspace\Spring\spring-trade-mcp-server\build\classes\java\main started by BusinessComputers.in in D:\Workspace\Spring\spring-trade-mcp-server)
+[INFO ] 2025-05-25 10:58:49.975 [main] TradeApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-05-25 10:58:55.539 [main] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2025-05-25 10:58:55.568 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-25 10:58:55.574 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2025-05-25 10:58:55.577 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO ] 2025-05-25 10:58:55.708 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-05-25 10:58:55.709 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5597 ms
+[INFO ] 2025-05-25 10:58:57.486 [main] FlywayExecutor - Database: jdbc:postgresql://localhost:5432/ibandb (PostgreSQL 17.4)
+[INFO ] 2025-05-25 10:58:57.663 [main] DbValidate - Successfully validated 0 migrations (execution time 00:00.058s)
+[WARN ] 2025-05-25 10:58:57.664 [main] DbValidate - No migrations found. Are your locations set up correctly?
+[INFO ] 2025-05-25 10:58:57.797 [main] DbMigrate - Current version of schema "public": << Empty Schema >>
+[INFO ] 2025-05-25 10:58:57.804 [main] DbMigrate - Schema "public" is up to date. No migration necessary.
+[INFO ] 2025-05-25 10:58:58.566 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2025-05-25 10:58:59.465 [main] EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[INFO ] 2025-05-25 10:59:00.869 [RMI TCP Connection(2)-127.0.0.1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-05-25 10:59:00.870 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-05-25 10:59:00.876 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Completed initialization in 4 ms
+[INFO ] 2025-05-25 10:59:00.954 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-25 10:59:01.043 [main] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[INFO ] 2025-05-25 10:59:01.084 [main] TradeApplication - Started TradeApplication in 12.066 seconds (process running for 14.778)
+[INFO ] 2025-05-25 10:59:51.148 [http-nio-8080-exec-4] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2025-05-25 10:59:51.242 [http-nio-8080-exec-4] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6845ed1b
+[INFO ] 2025-05-25 10:59:51.248 [http-nio-8080-exec-4] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2025-05-25 11:11:53.780 [main] TradeApplication - Starting TradeApplication using Java 21.0.7 with PID 18880 (D:\Workspace\Spring\spring-trade-mcp-server\build\classes\java\main started by BusinessComputers.in in D:\Workspace\Spring\spring-trade-mcp-server)
+[INFO ] 2025-05-25 11:11:53.802 [main] TradeApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-05-25 11:11:58.776 [main] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2025-05-25 11:11:58.817 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-25 11:11:58.823 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2025-05-25 11:11:58.823 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO ] 2025-05-25 11:11:59.058 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-05-25 11:11:59.058 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5132 ms
+[INFO ] 2025-05-25 11:12:01.114 [main] FlywayExecutor - Database: jdbc:postgresql://localhost:5432/ibandb (PostgreSQL 17.4)
+[INFO ] 2025-05-25 11:12:01.231 [main] DbValidate - Successfully validated 0 migrations (execution time 00:00.048s)
+[WARN ] 2025-05-25 11:12:01.232 [main] DbValidate - No migrations found. Are your locations set up correctly?
+[INFO ] 2025-05-25 11:12:01.397 [main] DbMigrate - Current version of schema "public": << Empty Schema >>
+[INFO ] 2025-05-25 11:12:01.407 [main] DbMigrate - Schema "public" is up to date. No migration necessary.
+[INFO ] 2025-05-25 11:12:02.183 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2025-05-25 11:12:03.578 [main] EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[INFO ] 2025-05-25 11:12:05.256 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2025-05-25 11:12:05.310 [main] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[INFO ] 2025-05-25 11:12:05.339 [main] TradeApplication - Started TradeApplication in 12.643 seconds (process running for 17.713)
+[INFO ] 2025-05-25 11:12:07.803 [RMI TCP Connection(2)-127.0.0.1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-05-25 11:12:07.803 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-05-25 11:12:07.803 [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet - Completed initialization in 0 ms
+[INFO ] 2025-05-25 11:12:32.591 [http-nio-8080-exec-1] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2025-05-25 11:12:32.676 [http-nio-8080-exec-1] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@338a170b
+[INFO ] 2025-05-25 11:12:32.682 [http-nio-8080-exec-1] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2025-05-27 16:18:08.231 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sample.iban.TradeServiceTests]: TradeServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2025-05-27 16:33:09.292 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sample.trade.iban.IbanApplicationTests]: IbanApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2025-05-27 16:46:28.569 [main] MockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2025-05-27 16:46:28.569 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2025-05-27 16:46:28.585 [main] TestDispatcherServlet - Completed initialization in 0 ms
+[INFO ] 2025-05-27 16:47:39.268 [main] MockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2025-05-27 16:47:39.285 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2025-05-27 16:47:39.296 [main] TestDispatcherServlet - Completed initialization in 6 ms
+[INFO ] 2025-05-27 16:55:08.776 [Test worker] MockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2025-05-27 16:55:08.788 [Test worker] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2025-05-27 16:55:08.800 [Test worker] TestDispatcherServlet - Completed initialization in 0 ms

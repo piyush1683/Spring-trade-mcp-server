@@ -1,4 +1,4 @@
-package com.sample.iban.model;
+package com.sample.trade.model;
 
 public record IBANAccount(
                 String accountNumber,

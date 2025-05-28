@@ -1,4 +1,4 @@
-package com.sample.iban.command;
+package com.sample.trade.command;
 
 import java.util.UUID;
 

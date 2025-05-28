@@ -1,4 +1,4 @@
-package com.sample.iban.controller;
+package com.sample.trade.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.iban.config.ConfigReader;
-import com.sample.iban.model.IBANAccount;
+import com.sample.trade.config.ConfigReader;
+import com.sample.trade.model.IBANAccount;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;

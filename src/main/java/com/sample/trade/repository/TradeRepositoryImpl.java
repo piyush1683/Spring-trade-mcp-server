@@ -1,4 +1,4 @@
-package com.sample.iban.repository;
+package com.sample.trade.repository;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.sample.iban.command.TradeDTOs;
-import com.sample.iban.command.TradeDTOs.TradeState;
+import com.sample.trade.command.TradeDTOs;
+import com.sample.trade.command.TradeDTOs.TradeState;
 
 @Repository
 public class TradeRepositoryImpl {

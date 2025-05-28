@@ -1,4 +1,4 @@
-package com.sample.iban.command;
+package com.sample.trade.command;
 
 import java.sql.SQLException;
 import java.util.UUID;
@@ -10,10 +10,10 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.sample.iban.command.TradeDTOs.CreateTradeCommand;
-import com.sample.iban.command.TradeDTOs.TradeCreatedEvent;
-import com.sample.iban.command.TradeDTOs.TradeState;
-import com.sample.iban.repository.TradeRepositoryImpl;
+import com.sample.trade.command.TradeDTOs.CreateTradeCommand;
+import com.sample.trade.command.TradeDTOs.TradeCreatedEvent;
+import com.sample.trade.command.TradeDTOs.TradeState;
+import com.sample.trade.repository.TradeRepositoryImpl;
 
 @Service
 public class TradeAggregate implements ApplicationEventPublisherAware {

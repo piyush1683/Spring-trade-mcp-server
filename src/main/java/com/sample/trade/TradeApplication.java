@@ -1,13 +1,13 @@
-package com.sample.iban;
+package com.sample.trade;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IbanApplication {
+public class TradeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IbanApplication.class, args);
+		SpringApplication.run(TradeApplication.class, args);
 	}
 
 }

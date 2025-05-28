@@ -1,4 +1,4 @@
-package com.sample.iban.config;
+package com.sample.trade.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.bind.ConstructorBinding;
