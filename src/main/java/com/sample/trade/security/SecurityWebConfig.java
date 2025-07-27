@@ -2,35 +2,37 @@ package com.sample.trade.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.oauth2.client.endpoint.DefaultAuthorizationCodeTokenResponseClient;
-import org.springframework.security.oauth2.client.endpoint.OAuth2AuthorizationCodeGrantRequestEntityConverter;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
-import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 @Configuration
 public class SecurityWebConfig {
 
+    private final AuthenticationProvider authenticationProvider = null;
+    private final JWTFilter jwtFilter = new JWTFilter(new JWTTokenGenService());
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("login", "/login").permitAll()
+                        .anyRequest().authenticated()
+                        // .authenticationProvider(authenticationProvider)
+                        .and()
+                        .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class));
+        return http.csrf().disable().build();
+    }
 
-        HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
-        requestCache.setMatchingRequestParameterName("continue");
-
-        http.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/trade", "/trade/**", "/iban").permitAll()
-                .requestMatchers("/actuator/**").permitAll()
-                .anyRequest().authenticated())
-                .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl("/index.html"))
-                .requestCache((cache) -> cache
-                        .requestCache(requestCache));
-
-        return http.build();
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        // Ignore static directories from Security Filter Chain
+        return web -> web.ignoring().requestMatchers("/login", "login.html", "/css/**", "/js/**", "/images/**",
+                "/favicon.ico", "/error", "/actuator/**");
     }
 
 }

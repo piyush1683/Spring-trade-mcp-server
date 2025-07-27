@@ -61,8 +61,10 @@ public class TradeRepositoryImpl {
 
     // Example method to find a trade by ID
     public TradeState findTradeById(UUID id) {
-        // Implementation to find the trade by ID
-        return new TradeState(id, "tradeId", "party1", "party2", "amount", "tradetype");
+        String selectByIdQuery = "select id, tradeId, party1, party2, amount, tradetype from trade where id = ?";
+        TradeState tradeObj = jdbcTemplate.queryForObject(selectByIdQuery,
+                rowMapper, id);
+        return tradeObj;
     }
 
 }

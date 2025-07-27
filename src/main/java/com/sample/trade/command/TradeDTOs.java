@@ -20,6 +20,7 @@ public class TradeDTOs {
                         String party2,
                         String amount,
                         String tradetype) {
+
         }
 
         public record TradeCreatedEvent(

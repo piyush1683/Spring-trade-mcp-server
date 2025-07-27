@@ -22,7 +22,8 @@ public class IBANController {
     @Autowired
     private ConfigReader configReader;
 
-    @GetMapping("/IBAN")
+    @RequestMapping(value = "/IBAN", method = RequestMethod.GET, produces = {
+            "application/json" })
     public String getIBANInfo() {
         return "IBAN information" + configReader.name() + "::" + configReader.proxy().host();
     }
