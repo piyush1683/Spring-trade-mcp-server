@@ -24,7 +24,7 @@ public class JWTFilter extends OncePerRequestFilter {
         System.out.println("JWT Filter is processing the request");
         String authheader = request.getHeader("Authorization");
         String jwtToken = null;
-        if (authheader != null || !authheader.startsWith("Bearer ")) {
+        if (authheader != null && !authheader.startsWith("Bearer ")) {
             jwtToken = authheader.substring(7);
             System.out.println("JWT Token: " + jwtToken);
         } else {
@@ -55,7 +55,12 @@ public class JWTFilter extends OncePerRequestFilter {
     public boolean shouldNotFilter(HttpServletRequest request) {
         // Logic to determine if the filter should not be applied
         String path = request.getServletPath();
-        if (path.startsWith("/login")) {
+        if (path.startsWith("/login") || path.startsWith("/index.html") || path.startsWith("/mcp-client.html")
+                || path.startsWith("/mcp/") || path.startsWith("/topics/") || path.startsWith("/app/")
+                || path.startsWith("/endpoints") || path.startsWith("/health") || path.startsWith("/actuator")
+                || path.startsWith("/ai/") || path.startsWith("/ai/**") || path.startsWith("/actuator/**")
+                || path.startsWith("/public/") || path.startsWith("/static/") || path.startsWith("/resources/")
+                || path.startsWith("/webjars/")) {
             return true; // Skip the filter for public API paths
         }
         // return false; // Apply the filter for all requests

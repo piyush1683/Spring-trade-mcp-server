@@ -20,7 +20,11 @@ public class SecurityWebConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("login", "/login").permitAll()
+                        .requestMatchers("login", "/login", "/index.html", "index.html", "mcp-client.html",
+                                "/mcp-client.html", "/mcp/**", "/topics/**", "/app/**", "/endpoints", "/health",
+                                "/ai/**", "/actuator/**",
+                                "/ai/**/**")
+                        .permitAll()
                         .anyRequest().authenticated()
                         // .authenticationProvider(authenticationProvider)
                         .and()

@@ -56,6 +56,9 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
+	
+	// WebSocket support for MCP server
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 }
 
 tasks.named('bootBuildImage') {
@@ -65,6 +68,8 @@ tasks.named('bootBuildImage') {
 
 configurations {
     all*.exclude module : 'spring-boot-starter-logging'
+    all*.exclude module : 'logback-classic'
+    all*.exclude module : 'logback-core'
 }
 
 

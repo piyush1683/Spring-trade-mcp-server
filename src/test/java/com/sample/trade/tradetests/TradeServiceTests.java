@@ -61,6 +61,7 @@ public class TradeServiceTests {
                 .andDo(MockMvcResultHandlers.print());
 
         System.out.println("Piyush printing the response:::");
+
     }
 
     @Test
